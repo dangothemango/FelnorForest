@@ -1,0 +1,242 @@
+{
+	"1" : 
+	{
+		"message" : "Hey...anyone there?",
+		"decision" : null,
+		"destId" : "2",
+		"timeDelay" : "0:0:3"
+	},
+	"2" : 
+	{
+		"message" : "Come in...Anyone?",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "I read you.",
+				"destId" : "3"
+			},
+			"choice2" : 
+			{
+				"message" : "Who is this?",
+				"destId" : "4"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},	
+	"3" : 
+	{
+		"message" : "Oh thank God! I thought we'd be stuck out here on our own!",
+		"decision" : null,
+		"destId" : "5",
+		"timeDelay" : "0:0:3"
+	},	
+	"4" : 
+	{
+		"message" : "Right, sorry. Got ahead of myself.",
+		"decision" : null,
+		"destId" : "5",
+		"timeDelay" : "0:0:3"
+	},
+	"5" : 
+	{
+		"message" : "My name is Alex. I'm the leader of a hiking party in the Felnor forest.",
+		"decision" : null,
+		"destId" : "6",
+		"timeDelay" : "0:0:3"
+	},
+	"6" : 
+	{
+		"message" : "We're kinda in a real pickle...",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "What's the situation?",
+				"destId" : "7"
+			},
+			"choice2" : 
+			{
+				"message" : "What do you mean by 'a real pickle'?",
+				"destId" : "7"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},	
+	"7" : 
+	{
+		"message" : "I know this forest like the back of my hand...",
+		"decision" : null,
+		"destId" : "8",
+		"timeDelay" : "0:0:3"
+	},	
+	"8" : 
+	{
+		"message" : "But for some reason, I don't know where I am...",
+		"decision" : null,
+		"destId" : "9",
+		"timeDelay" : "0:0:3"
+	},
+	"9" : 
+	{
+		"message" : "I'm seeing things I've never seen before.",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "What do you mean?",
+				"destId" : "10"
+			},
+			"choice2" : 
+			{
+				"message" : "Like what?",
+				"destId" : "10"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},	
+	"10" : 
+	{
+		"message" : "Well, I'm looking at a sign with weird looking hieroglyphics or something on it.",
+		"decision" : null,
+		"destId" : "11",
+		"timeDelay" : "0:0:3"
+	},	
+	"11" : 
+	{
+		"message" : "And I can assure you, that is not normal.",
+		"decision" : null,
+		"destId" : "12",
+		"timeDelay" : "0:0:3"
+	},
+	"12" : 
+	{
+		"message" : "I've hiked this route for years and this has never been here.",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "Are you sure it's not new?",
+				"destId" : "13"
+			},
+			"choice2" : 
+			{
+				"message" : "That's weird.",
+				"destId" : "14"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},
+	"13" : 
+	{
+		"message" : "It looks super old, like it's been here for ages...",
+		"decision" : null,
+		"destId" : "15",
+		"timeDelay" : "0:0:3"
+	},	
+	"14" : 
+	{
+		"message" : "You're telling me.",
+		"decision" : null,
+		"destId" : "15",
+		"timeDelay" : "0:0:3"
+	},
+	"15" : 
+	{
+		"message" : "Not to mention the fact that the trail is different.",
+		"decision" : null,
+		"destId" : "16",
+		"timeDelay" : "0:0:3"
+	},
+	"16" : 
+	{
+		"message" : "And I mean like, super different.",
+		"decision" : null,
+		"destId" : "17",
+		"timeDelay" : "0:0:3"
+	},
+	"17" : 
+	{
+		"message" : "When we started hiking it was the same...",
+		"decision" : null,
+		"destId" : "18",
+		"timeDelay" : "0:0:3"
+	},
+	"18" : 
+	{
+		"message" : "But as we got deeper in, the turns were different.",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "What do you mean by different?",
+				"destId" : "19"
+			},
+			"choice2" : 
+			{
+				"message" : "Alright, that's weird.",
+				"destId" : "20"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},
+	"19" : 
+	{
+		"message" : "I mean where we would turn left, there's a right instead.",
+		"decision" : null,
+		"destId" : "21",
+		"timeDelay" : "0:0:3"
+	},	
+	"20" : 
+	{
+		"message" : "Right?",
+		"decision" : null,
+		"destId" : "21",
+		"timeDelay" : "0:0:3"
+	},
+	"21" : 
+	{
+		"message" : "When we started hiking it was the same...",
+		"decision" : null,
+		"destId" : "22",
+		"timeDelay" : "0:0:3"
+	},
+	"22" : 
+	{
+		"message" : "So, boss, what's the plan for getting us out?",
+		"decision" : 
+		{
+			"choice1" : 
+			{
+				"message" : "I'll send an evac to your position.",
+				"destId" : "23"
+			},
+			"choice2" : 
+			{
+				"message" : "I can try and guide you out.",
+				"destId" : "24"
+			}
+		},
+		"destId" : null,
+		"timeDelay" : "0:0:3"
+	},
+	"23" : 
+	{
+		"message" : "Oh, man. Sounds good.",
+		"decision" : null,
+		"destId" : "25",
+		"timeDelay" : "0:0:3"
+	},	
+	"24" : 
+	{
+		"message" : "If that's the best course of action...",
+		"decision" : null,
+		"destId" : "25",
+		"timeDelay" : "0:0:3"
+	}
+}
