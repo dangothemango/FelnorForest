@@ -11,8 +11,8 @@ import java.io.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var visibleMessagesList: ArrayList<Message> = ArrayList()
-    private var messagesList: ArrayList<Message> = ArrayList()
+    private var visibleMessagesList: ArrayList<RecyclerItem> = ArrayList()
+    private var messagesList: ArrayList<RecyclerItem> = ArrayList()
 
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: MainViewRecyclerAdapter
@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
         var i: Int = 1
         while (json.has(i.toString())){
             var message:JSONObject = json.getJSONObject(i.toString())
-            messagesList.add(Message(message))
-            Log.d("MainActivity", messagesList.get(i-1).message)
+            var messageObject = Message(message)
+            messagesList.add(messageObject)
+            if (messageObject.decision != null) {
+                messagesList.add(messageObject.decision as Decision)
+            }
             i++
         }
     }
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
 
-    fun parseJson(resource: Int): JSONObject {
+    private fun parseJson(resource: Int): JSONObject {
         var inStream: InputStream = resources.openRawResource(resource)
         var writer: Writer = StringWriter()
         var buffer: CharArray = kotlin.CharArray(1024)

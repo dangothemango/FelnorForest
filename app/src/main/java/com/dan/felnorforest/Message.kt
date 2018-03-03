@@ -6,7 +6,9 @@ import java.io.Serializable
 
 /**
  */
-class Message(messageJSON: JSONObject): Serializable {
+abstract class RecyclerItem: Serializable{}
+
+class Message(messageJSON: JSONObject): RecyclerItem() {
 
     public lateinit var message: String
     public var decision: Decision? = null
@@ -26,9 +28,13 @@ class Message(messageJSON: JSONObject): Serializable {
         }
 
     }
+
+    override fun toString(): String {
+        return message
+    }
 }
 
-class Decision(decisionJSON: JSONObject): Serializable {
+class Decision(decisionJSON: JSONObject): RecyclerItem() {
 
     public lateinit var choice1: Choice
     public lateinit var choice2: Choice
@@ -40,6 +46,10 @@ class Decision(decisionJSON: JSONObject): Serializable {
         } catch (e: JSONException){
             e.printStackTrace()
         }
+    }
+
+    override fun toString(): String {
+        return choice1.message+":"+choice2.message
     }
 
 }
