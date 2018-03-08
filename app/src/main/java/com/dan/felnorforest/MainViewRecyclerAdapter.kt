@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import kotlinx.android.synthetic.main.message_recycler_row.view.*
 import kotlinx.android.synthetic.main.decision_recycler_row.view.*
 
@@ -78,16 +79,20 @@ class MainViewRecyclerAdapter(private val messages: ArrayList<RecyclerItem>): Re
     class DecisionHolder(v: View):RecyclerView.ViewHolder(v),View.OnClickListener{
 
         private var view: View = v
-        private var choice1: Choice? = null
-        private var choice2: Choice? = null
 
         init {
             v.setOnClickListener(this)
         }
 
         fun bindDecision(decision: Decision){
-                view.choice1Button.text = decision.choice1.message
-                view.choice2Button.text = decision.choice2.message
+            configButton(view.choice1Button, decision.choice1)
+            configButton(view.choice2Button, decision.choice2)
+
+        }
+
+        private fun configButton(button: Button, choice: Choice){
+            button.text = choice.message
+            button.setOnClickListener(choice.clickHandler)
         }
 
         override fun onClick(v: View?) {

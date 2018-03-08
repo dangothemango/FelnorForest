@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.io.*
@@ -27,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         var json: JSONObject = parseJson(R.raw.narration)
-        var i: Int = 1
+        var i = 1
         while (json.has(i.toString())){
             var message:JSONObject = json.getJSONObject(i.toString())
-            var messageObject = Message(message)
+            var messageObject = Message(message,{ view: View?, i: Int -> onDecisionClick(view,i) })
             messagesList.add(messageObject)
             if (messageObject.decision != null) {
                 messagesList.add(messageObject.decision as Decision)
@@ -51,18 +52,22 @@ class MainActivity : AppCompatActivity() {
         var buffer: CharArray = kotlin.CharArray(1024)
         try {
             var reader: Reader = BufferedReader(InputStreamReader(inStream, "UTF-8"))
-            var n: Int = reader.read(buffer);
+            var n: Int = reader.read(buffer)
             while (n != -1) {
-                writer.write(buffer, 0, n);
+                writer.write(buffer, 0, n)
                 n = reader.read(buffer)
             }
         } finally {
-            inStream.close();
+            inStream.close()
         }
 
-        var jsonString : String  = writer.toString();
+        var jsonString : String  = writer.toString()
 
         return JSONObject(jsonString)
+    }
+
+    fun onDecisionClick(view: View?, destId: Int){
+        Log.d("MainActivity","Choice Made, moving to message $destId")
     }
 
 }
